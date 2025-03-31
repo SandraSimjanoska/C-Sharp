@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeLibrary.Enums;
+using System;
 
 namespace EmployeeLibrary
 {
@@ -19,9 +20,7 @@ namespace EmployeeLibrary
 
         public void PrintInfo()
         {
-            Console.WriteLine($"Name: {FirstName} {LastName}");
-            Console.WriteLine($"Role: {Role}");
-            Console.WriteLine($"Salary: ${Salary}");
+            Console.WriteLine($"First Name: {FirstName}, Last Name: {LastName}, Salary: {Salary}");
         }
 
         public virtual double GetSalary()

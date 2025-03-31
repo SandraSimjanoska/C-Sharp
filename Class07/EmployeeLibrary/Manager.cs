@@ -1,28 +1,26 @@
-﻿namespace EmployeeLibrary
+﻿using EmployeeLibrary.Enums;
+namespace EmployeeLibrary
 {
     public class Manager : Employee
     {
-        private double bonus; 
+        private double Bonus { get; set; }
+        public string Department { get; set; }
 
-        public Manager(string firstName, string lastName, double salary)
+        public Manager(string firstName, string lastName, double salary, string department)
             : base(firstName, lastName, Role.Manager, salary)
         {
-            bonus = 0;  
+            Bonus = 0;
+            Department = department;
         }
 
         public void AddBonus(double amount)
         {
-            bonus += amount;
+            Bonus += amount;
         }
 
         public override double GetSalary()
         {
-            return Salary + bonus;  
-        }
-
-        public double GetBonus()
-        {
-            return bonus;
+            return Salary + Bonus;
         }
     }
 }

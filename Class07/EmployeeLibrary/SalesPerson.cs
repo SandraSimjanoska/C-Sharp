@@ -1,31 +1,32 @@
-﻿using System;
+﻿using EmployeeLibrary.Enums;
+using System;
 
 namespace EmployeeLibrary
 {
     public class SalesPerson : Employee
     {
-        private double salesAmount;
+        private double SuccessSaleRevenue { get; set; }
 
         public SalesPerson(string firstName, string lastName)
             : base(firstName, lastName, Role.Sales, 500)
         {
-            salesAmount = 0;
+            SuccessSaleRevenue = 0;
         }
 
         public void AddSuccessRevenue(double amount)
         {
-            salesAmount = amount;
+            SuccessSaleRevenue += amount;
         }
 
         public override double GetSalary()
         {
-            if (salesAmount <= 2000)
-                return 500 + 500;  
+            if (SuccessSaleRevenue <= 2000)
+                return Salary + 500;
 
-            if (salesAmount <= 5000)
-                return 500 + 1000; 
+            if (SuccessSaleRevenue <= 5000)
+                return Salary + 1000;
 
-            return 500 + 1500;     
+            return Salary + 1500;
         }
     }
 }
